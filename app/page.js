@@ -1,9 +1,9 @@
 import styles from './page.module.scss';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main >
-      <div >
+    <main>
+      <div>
         <h1>Home Page</h1>
       </div>
     </main>
