@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { products } from '../../database/products';
 
 export default function ProductsPage() {
@@ -8,7 +9,7 @@ export default function ProductsPage() {
       {products.map((product) => {
         return (
           <div key={`product-div-${product.id}`}>
-            {product.name}
+            <Link href={`/products/${product.id}`}>{product.name}</Link>
             <Image
               scr={`/images/${product.name}.png`}
               width={200}
