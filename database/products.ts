@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { Product } from '../migrations/1684939167-createTableProducts';
 import { sql } from './connect';
 
 /* export const products = [
@@ -12,11 +13,11 @@ export function getProductById(id) {
   return products.find((product) => product.id === id);
 } */
 
-type Product = {
+/* type Product = {
   id: number;
   name: string;
   price: number;
-};
+}; */
 
 export const getProducts = cache(async () => {
   const products = await sql<Product[]>`
@@ -25,7 +26,7 @@ export const getProducts = cache(async () => {
   return products;
 });
 
-export const getAnimalById = cache(async (id: number) => {
+export const getProductById = cache(async (id: number) => {
   const [product] = await sql<Product[]>`
     SELECT
       *

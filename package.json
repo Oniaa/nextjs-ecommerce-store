@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "dotenv -- ley --require tsm"
   },
   "dependencies": {
+    "dotenv-cli": "^7.2.1",
     "dotenv-safe": "^8.2.0",
     "ley": "^0.8.1",
     "next": "13.4.3",
@@ -17,7 +19,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.62.1",
     "secure-json-parse": "^2.7.0",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.1",
+    "tsm": "^2.3.0"
   },
   "devDependencies": {
     "@types/dotenv-safe": "^8.1.2",

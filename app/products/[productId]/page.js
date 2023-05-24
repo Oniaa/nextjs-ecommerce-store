@@ -5,8 +5,8 @@ import ProductCartForm from './ProductCartForm';
 
 export const dynamic = 'force-dynamic';
 
-export default function SingleProductPage({ params }) {
-  const singleProduct = getProductById(Number(params.productId));
+export default async function SingleProductPage({ params }) {
+  const singleProduct = await getProductById(Number(params.productId));
 
   if (!singleProduct) {
     notFound();
