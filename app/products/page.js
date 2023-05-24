@@ -13,7 +13,7 @@ export default async function ProductsPage() {
           <div key={`product-div-${product.id}`}>
             <Link href={`/products/${product.id}`}>{product.name}</Link>
             <Image
-              scr={`/images/${product.name}.png`}
+              src={`/images/${product.name}.png`}
               width={200}
               height={200}
             />
