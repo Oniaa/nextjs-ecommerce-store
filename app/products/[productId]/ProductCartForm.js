@@ -2,32 +2,15 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { createOrUpdateCart, createUpdateComment } from './actions';
+import { createOrUpdateCart, deleteCartItem } from './actions';
 
 export default function ProductCartForm(props) {
-  const [comment, setComment] = useState('');
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
   return (
     <form>
-      <textarea
-        value={comment}
-        onChange={(event) => {
-          setComment(event.currentTarget.value);
-        }}
-      />
-      <button
-        formAction={async () => {
-          router.refresh();
-          await createUpdateComment(props.productId, comment);
-        }}
-      >
-        Add Comment
-      </button>
       <div>
-        <h1>Product Page</h1>
-        <p>Quantity: </p>
         <input
           type="number"
           min="1"
@@ -43,6 +26,14 @@ export default function ProductCartForm(props) {
           }}
         >
           Add to Cart
+        </button>
+        <button
+          formAction={async () => {
+            router.refresh();
+            await deleteCartItem(props.productId, quantity);
+          }}
+        >
+          Remove from Cart
         </button>
       </div>
     </form>
