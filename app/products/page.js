@@ -16,6 +16,7 @@ export default async function ProductsPage() {
               src={`/images/${product.name}.png`}
               width={200}
               height={200}
+              alt="Bubbles"
             />
           </div>
         );

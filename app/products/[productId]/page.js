@@ -5,23 +5,24 @@ import ProductCartForm from './ProductCartForm';
 
 export const dynamic = 'force-dynamic';
 
-export default async function SingleProductPage({ params }) {
-  const singleProduct = await getProductById(Number(params.productId));
+export default async function ProductPage({ params }) {
+  const product = await getProductById(Number(params.productId));
 
-  if (!singleProduct) {
+  if (!product) {
     notFound();
   }
 
   return (
     <main>
-      <h1>{singleProduct.name}</h1>
+      <h1>{product.name}</h1>
       <Image
-        src={`/images/${singleProduct.name}.png`}
+        src={`/images/${product.name}.png`}
         width={200}
         height={200}
+        alt="Bubble"
       />
-      <span>{singleProduct.price} </span>
-      <ProductCartForm />
+      <span>{product.price} </span>
+      <ProductCartForm productId={product.id} />
     </main>
   );
 }
