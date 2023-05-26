@@ -3,10 +3,48 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  width: 100%;
+  background-color: transparent;
+  gap: 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
-  .logo {
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 32px;
     font-size: 1.2rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 500;
+
+    /* li {
+      margin-right: 32px;
+    } */
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
   }
+}
+
+.leftNavbar {
+  margin-right: auto;
+}
+
+.rightNavbar {
+  margin-left: auto;
+}
+
+.logo {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
