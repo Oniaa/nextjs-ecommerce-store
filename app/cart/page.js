@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
@@ -31,35 +32,47 @@ export default async function CartPage() {
   console.log(orders);
 
   return (
-    <main>
-      <div>
-        <h1>Cart Page</h1>
-        {orders.length > 0 && (
-          <>
-            <div>
-              {orders.map((order) => {
-                return (
-                  <div key={`cart-div-${order.id}`}>
-                    <h2>{order.name}</h2>
-                    <span>{order.price} $</span>
-                    <br />
-                    <span>{order.quantity}</span>
-                    <DeleteItemFromCart productId={order.id} />
-                  </div>
-                );
-              })}
-            </div>
-            <br />
-            <br />
-            <div>
-              <span>
-                Total Quantity: {totalSum} Total Price: {totalPrice}$
-              </span>
-            </div>
-            <CheckOutButton />
-          </>
-        )}
-      </div>
+    <main className={style.mainContainer}>
+      <h1>Your Cart</h1>
+      <br />
+      <br />
+      {orders.length > 0 && (
+        <>
+          {orders.map((order) => {
+            return (
+              <div
+                className={style.contentContainer}
+                key={`cart-div-${order.id}`}
+              >
+                <Image
+                  src={`/images/${order.name}.png`}
+                  width={100}
+                  height={100}
+                  alt="Bubbles"
+                />
+                <div>
+                  <h3>{order.name}</h3>
+                  <span>{order.price} $</span>
+                  <br />
+                  <span>{order.quantity}</span>
+                  <DeleteItemFromCart productId={order.id} />
+                </div>
+              </div>
+            );
+          })}
+
+          <br />
+          <br />
+          <div>
+            <span>
+              Total Quantity: {totalSum} Total Price: {totalPrice}$
+            </span>
+          </div>
+          <br />
+          <br />
+          <CheckOutButton />
+        </>
+      )}
     </main>
   );
 }
