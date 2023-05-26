@@ -20,8 +20,6 @@ export default function RootLayout({ children }) {
 
   const totalSum = carts.reduce((sum, item) => sum + parseInt(item.number), 0);
 
-  console.log(carts);
-
   return (
     <html lang="en">
       <body className={inter.className}>

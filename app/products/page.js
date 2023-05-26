@@ -5,6 +5,8 @@ import { getProducts } from '../../database/products';
 export default async function ProductsPage() {
   const products = await getProducts();
 
+  console.log(products);
+
   return (
     <main>
       <h1>Bubbles</h1>
