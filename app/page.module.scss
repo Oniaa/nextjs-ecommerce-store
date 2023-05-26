@@ -73,5 +73,13 @@
   transform: translate(-50%, -50%);
   z-index: 2;
   font-weight: bold;
-  font-size: 62px;
+  font-size: 3.8rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: linear-gradient(to bottom, #fdd7db, #ffffff);
 }

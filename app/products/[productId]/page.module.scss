@@ -1,0 +1,27 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 3.8rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+}

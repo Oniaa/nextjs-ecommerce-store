@@ -3,6 +3,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckOutButton from './CheckOutButton';
 import DeleteItemFromCart from './DeleteButton';
+import style from './page.module.scss';
 
 export default async function CartPage() {
   const products = await getProducts();
@@ -31,32 +32,34 @@ export default async function CartPage() {
 
   return (
     <main>
-      <h1>Cart Page</h1>
-      {orders.length > 0 && (
-        <>
-          <div>
-            {orders.map((order) => {
-              return (
-                <div key={`cart-div-${order.id}`}>
-                  <h2>{order.name}</h2>
-                  <span>{order.price} $</span>
-                  <br />
-                  <span>{order.quantity}</span>
-                  <DeleteItemFromCart productId={order.id} />
-                </div>
-              );
-            })}
-          </div>
-          <br />
-          <br />
-          <div>
-            <span>
-              Total Quantity: {totalSum} Total Price: {totalPrice}$
-            </span>
-          </div>
-          <CheckOutButton />
-        </>
-      )}
+      <div>
+        <h1>Cart Page</h1>
+        {orders.length > 0 && (
+          <>
+            <div>
+              {orders.map((order) => {
+                return (
+                  <div key={`cart-div-${order.id}`}>
+                    <h2>{order.name}</h2>
+                    <span>{order.price} $</span>
+                    <br />
+                    <span>{order.quantity}</span>
+                    <DeleteItemFromCart productId={order.id} />
+                  </div>
+                );
+              })}
+            </div>
+            <br />
+            <br />
+            <div>
+              <span>
+                Total Quantity: {totalSum} Total Price: {totalPrice}$
+              </span>
+            </div>
+            <CheckOutButton />
+          </>
+        )}
+      </div>
     </main>
   );
 }
