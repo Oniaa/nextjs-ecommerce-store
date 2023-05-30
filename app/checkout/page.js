@@ -1,8 +1,15 @@
+import CheckOutForm from './CheckOutForm';
+import style from './page.module.scss';
+
 export default function CheckoutPage() {
   return (
-    <main>
+    <main className={style.mainContainer}>
+      <h1>Checkout Page</h1>
       <div>
-        <h1>Checkout Page</h1>
+        <CheckOutForm />
+      </div>
+      <div>
+        <h2>Cart summary</h2>
       </div>
     </main>
   );

@@ -7,7 +7,7 @@ export default function CheckOutButton() {
 
   return (
     <button type="button" onClick={() => router.push('/checkout')}>
-      Check Out
+      Proceed to Check Out
     </button>
   );
 }
