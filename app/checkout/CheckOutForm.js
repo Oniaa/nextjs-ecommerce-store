@@ -20,15 +20,15 @@ export default function CheckOutForm() {
 
   const validate = () => {
     return (
-      firstName.length &
-      lastName.length &
-      email.length &
-      address.length &
-      city.length &
-      postalCode.length &
-      country.length &
-      creditCard.length &
-      expirationDate.length &
+      firstName.length &&
+      lastName.length &&
+      email.length &&
+      address.length &&
+      city.length &&
+      postalCode.length &&
+      country.length &&
+      creditCard.length &&
+      expirationDate.length &&
       securityCode.length
     );
   };
@@ -55,7 +55,6 @@ export default function CheckOutForm() {
       <label>
         E-mail address
         <input
-          type="e-mail"
           value={email}
           onChange={(event) => setEmail(event.currentTarget.value)}
           required
@@ -80,7 +79,6 @@ export default function CheckOutForm() {
       <label>
         Postal Code
         <input
-          type="number"
           value={postalCode}
           onChange={(event) => setPostalCode(event.currentTarget.value)}
           required
@@ -98,7 +96,6 @@ export default function CheckOutForm() {
       <label>
         Card Number
         <input
-          type="number"
           value={creditCard}
           onChange={(event) => setCreditCard(event.currentTarget.value)}
           required
@@ -107,7 +104,6 @@ export default function CheckOutForm() {
       <label>
         Expiration date
         <input
-          type="number"
           value={expirationDate}
           onChange={(event) => setExpirationDate(event.currentTarget.value)}
           required
@@ -116,7 +112,6 @@ export default function CheckOutForm() {
       <label>
         Security code
         <input
-          type="number"
           value={securityCode}
           onChange={(event) => setSecurityCode(event.currentTarget.value)}
           required

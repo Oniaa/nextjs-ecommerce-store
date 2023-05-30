@@ -1,12 +1,18 @@
 .mainContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   width: 100vw;
 
   h1 {
     margin: 32px 0 56px 0;
   }
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

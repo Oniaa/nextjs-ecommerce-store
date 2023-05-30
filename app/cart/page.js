@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import ChangeItemQuantity from './ChangeItemQuantity';
 import CheckOutButton from './CheckOutButton';
 import DeleteItemFromCart from './DeleteButton';
 import style from './page.module.scss';
@@ -54,7 +55,10 @@ export default async function CartPage() {
                   <h3>{order.name}</h3>
                   <span>{order.price} $</span>
                   <br />
-                  <span>{order.quantity}</span>
+                  <ChangeItemQuantity
+                    productId={order.id}
+                    productQuantity={order.quantity}
+                  />
                   <DeleteItemFromCart productId={order.id} />
                 </div>
               </div>
