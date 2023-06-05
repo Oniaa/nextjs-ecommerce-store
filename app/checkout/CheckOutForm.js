@@ -39,6 +39,7 @@ export default function CheckOutForm() {
       <label>
         First name
         <input
+          data-test-id="checkout-first-name"
           value={firstName}
           onChange={(event) => setFirstName(event.currentTarget.value)}
           required
@@ -47,6 +48,7 @@ export default function CheckOutForm() {
       <label>
         Last name
         <input
+          data-test-id="checkout-last-name"
           value={lastName}
           onChange={(event) => setLastName(event.currentTarget.value)}
           required
@@ -55,6 +57,7 @@ export default function CheckOutForm() {
       <label>
         E-mail address
         <input
+          data-test-id="checkout-email"
           value={email}
           onChange={(event) => setEmail(event.currentTarget.value)}
           required
@@ -63,6 +66,7 @@ export default function CheckOutForm() {
       <label>
         Address
         <input
+          data-test-id="checkout-address"
           value={address}
           onChange={(event) => setAddress(event.currentTarget.value)}
           required
@@ -71,6 +75,7 @@ export default function CheckOutForm() {
       <label>
         City
         <input
+          data-test-id="checkout-city"
           value={city}
           onChange={(event) => setCity(event.currentTarget.value)}
           required
@@ -79,6 +84,7 @@ export default function CheckOutForm() {
       <label>
         Postal Code
         <input
+          data-test-id="checkout-postal-code"
           value={postalCode}
           onChange={(event) => setPostalCode(event.currentTarget.value)}
           required
@@ -87,6 +93,7 @@ export default function CheckOutForm() {
       <label>
         Country
         <input
+          data-test-id="checkout-country"
           value={country}
           onChange={(event) => setCountry(event.currentTarget.value)}
           required
@@ -96,6 +103,7 @@ export default function CheckOutForm() {
       <label>
         Card Number
         <input
+          data-test-id="checkout-credit-card"
           value={creditCard}
           onChange={(event) => setCreditCard(event.currentTarget.value)}
           required
@@ -104,6 +112,7 @@ export default function CheckOutForm() {
       <label>
         Expiration date
         <input
+          data-test-id="checkout-expiration-date"
           value={expirationDate}
           onChange={(event) => setExpirationDate(event.currentTarget.value)}
           required
@@ -112,6 +121,7 @@ export default function CheckOutForm() {
       <label>
         Security code
         <input
+          data-test-id="checkout-security-code"
           value={securityCode}
           onChange={(event) => setSecurityCode(event.currentTarget.value)}
           required
@@ -119,6 +129,7 @@ export default function CheckOutForm() {
       </label>
 
       <button
+        data-test-id="checkout-confirm-order"
         type="button"
         disabled={!validate()}
         onClick={() => router.push('/thank-you')}

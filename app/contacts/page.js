@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Contacts Page',
+  description: 'This is our Contacts Page',
+};
+
 export default function ContactsPage() {
   return (
     <main>

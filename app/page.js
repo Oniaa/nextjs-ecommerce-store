@@ -2,6 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Home Page',
+  description: 'This is our Home Page',
+};
+
 export default function HomePage() {
   return (
     <>

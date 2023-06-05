@@ -4,6 +4,11 @@ import { parseJson } from '../../util/json';
 import CheckOutForm from './CheckOutForm';
 import style from './page.module.scss';
 
+export const metadata = {
+  title: 'Checkout Page',
+  description: 'This is your Checkout Page',
+};
+
 export default async function CheckoutPage() {
   const products = await getProducts();
   const cartCookies = getCookie('cart');

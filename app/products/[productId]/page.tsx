@@ -6,6 +6,11 @@ import { parseJson } from '../../../util/json';
 import style from './page.module.scss';
 import ProductCartForm from './ProductCartForm';
 
+export const metadata = {
+  title: 'Single Product Page',
+  description: 'This is our Single Product Page',
+};
+
 export const dynamic = 'force-dynamic';
 
 type Props = {
@@ -35,11 +40,15 @@ export default async function ProductPage(props: Props) {
           width={400}
           height={400}
           alt="Bubble"
+          data-test-id="product-image"
         />
         <div className={style.infoContainer}>
           <h1>{product.slug}</h1>
           <br />
-          <h4>{product.price} $</h4>
+          <h4>
+            <span data-test-id="product-price">{product.price} </span>
+            <span> $</span>
+          </h4>
           <br />
           <p>{product.description} </p>
           <br />

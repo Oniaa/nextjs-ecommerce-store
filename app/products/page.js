@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import style from './page.module.scss';
 
+export const metadata = {
+  title: 'Products Page',
+  description: 'This is our Products Page',
+};
+
 export default async function ProductsPage() {
   const products = await getProducts();
 
@@ -24,7 +29,10 @@ export default async function ProductsPage() {
                 height={200}
                 alt="Bubbles"
               />
-              <Link href={`/products/${product.id}`}>
+              <Link
+                href={`/products/${product.id}`}
+                data-test-id={`product-${product.id}`}
+              >
                 {product.slug} {product.price}$
               </Link>
               {product.short}

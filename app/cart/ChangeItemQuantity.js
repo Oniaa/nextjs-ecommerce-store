@@ -16,7 +16,11 @@ export default function ChangeItemQuantity(props) {
       >
         -
       </button>
-      <input type="number" value={props.productQuantity} />
+      <input
+        data-test-id={`cart-product-quantity-${props.productId}`}
+        type="number"
+        value={props.productQuantity}
+      />
       <button
         formAction={async () => {
           router.refresh();

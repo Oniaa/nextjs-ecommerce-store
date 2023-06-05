@@ -7,6 +7,11 @@ import CheckOutButton from './CheckOutButton';
 import DeleteItemFromCart from './DeleteButton';
 import style from './page.module.scss';
 
+export const metadata = {
+  title: 'Cart',
+  description: 'This is your Cart Page',
+};
+
 export default async function CartPage() {
   const products = await getProducts();
   const cartCookies = getCookie('cart');
@@ -46,6 +51,7 @@ export default async function CartPage() {
               <div
                 className={style.contentContainer}
                 key={`cart-div-${order.id}`}
+                data-test-id={`cart-div-${order.id}`}
               >
                 <Image
                   src={`/images/${order.name}.png`}
@@ -72,9 +78,13 @@ export default async function CartPage() {
           <br />
           <br />
           <div>
-            <span>
-              Total Quantity: {totalSum} Total Price: {totalPrice}$
-            </span>
+            <h4>
+              <span>Total Quantity: {totalSum}</span>
+              <span>
+                Total Price: <span data-test-id="cart-total">{totalPrice}</span>
+                $
+              </span>
+            </h4>
           </div>
           <br />
           <br />

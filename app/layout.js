@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/products">Products</Link>
+                <Link href="/products" data-test-id="products-link">
+                  Products
+                </Link>
               </li>
             </ul>
             <ul className={style.rightNavbar}>
@@ -40,9 +42,9 @@ export default function RootLayout({ children }) {
                 <Link href="/contacts">Contacts</Link>
               </li>
               <li>
-                <Link href="/cart">
+                <Link data-test-id="cart-link" href="/cart">
                   <AiOutlineShoppingCart size="1.5rem" />
-                  {totalSum}
+                  <span data-test-id="cart-count">{totalSum}</span>
                 </Link>
               </li>
             </ul>

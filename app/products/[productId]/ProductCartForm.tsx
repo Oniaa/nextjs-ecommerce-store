@@ -16,6 +16,7 @@ export default function ProductCartForm(props: Props) {
     <form>
       <div>
         <input
+          data-test-id="product-quantity"
           type="number"
           min="1"
           value={quantity}
@@ -24,6 +25,7 @@ export default function ProductCartForm(props: Props) {
           }}
         />
         <button
+          data-test-id="product-add-to-cart"
           formAction={async () => {
             router.refresh();
             await createOrUpdateCart(props.productId, quantity.toString());
