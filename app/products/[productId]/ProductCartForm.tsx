@@ -1,10 +1,14 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { createOrUpdateCart, deleteCartItem } from './actions';
 
-export default function ProductCartForm(props) {
+type Props = {
+  productId: number;
+};
+
+export default function ProductCartForm(props: Props) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
@@ -15,14 +19,14 @@ export default function ProductCartForm(props) {
           type="number"
           min="1"
           value={quantity}
-          onChange={(event) => {
-            setQuantity(event.currentTarget.value);
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setQuantity(parseInt(event.currentTarget.value));
           }}
         />
         <button
           formAction={async () => {
             router.refresh();
-            await createOrUpdateCart(props.productId, quantity);
+            await createOrUpdateCart(props.productId, quantity.toString());
           }}
         >
           Add to Cart
@@ -30,7 +34,7 @@ export default function ProductCartForm(props) {
         <button
           formAction={async () => {
             router.refresh();
-            await deleteCartItem(props.productId, quantity);
+            await deleteCartItem(props.productId);
           }}
         >
           Remove from Cart

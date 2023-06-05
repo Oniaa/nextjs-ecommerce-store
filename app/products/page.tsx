@@ -25,8 +25,9 @@ export default async function ProductsPage() {
                 alt="Bubbles"
               />
               <Link href={`/products/${product.id}`}>
-                {product.name} {product.price}$
+                {product.slug} {product.price}$
               </Link>
+              {product.short}
             </div>
           );
         })}

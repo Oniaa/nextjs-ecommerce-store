@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { Product } from '../migrations/1684939167-createTableProducts';
+import { Product } from '../migrations/1685479714-createTableProducts';
 import { sql } from './connect';
 
 /* export const products = [

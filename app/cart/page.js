@@ -19,6 +19,8 @@ export default async function CartPage() {
       id: orderItem.id,
       name: orderItem.name,
       price: orderItem.price,
+      slug: orderItem.slug,
+      short: orderItem.short,
       quantity: cart.number,
     };
   });
@@ -52,7 +54,9 @@ export default async function CartPage() {
                   alt="Bubbles"
                 />
                 <div>
-                  <h3>{order.name}</h3>
+                  <h3>{order.slug}</h3>
+                  <span>{order.short} </span>
+                  <br />
                   <span>{order.price} $</span>
                   <br />
                   <ChangeItemQuantity
