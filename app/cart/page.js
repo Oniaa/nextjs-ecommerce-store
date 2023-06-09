@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
@@ -22,6 +23,7 @@ export default async function CartPage() {
 
   const orders = carts.map((cart) => {
     const orderItem = products.find((product) => product.id === cart.id);
+    const totalPrice = parseInt(orderItem.price) * parseInt(cart.number);
     return {
       id: orderItem.id,
       name: orderItem.name,
@@ -29,6 +31,7 @@ export default async function CartPage() {
       slug: orderItem.slug,
       short: orderItem.short,
       quantity: cart.number,
+      totalPrice: totalPrice,
     };
   });
 
@@ -61,7 +64,9 @@ export default async function CartPage() {
                     alt="Bubbles"
                   />
                   <div>
-                    <h3>{order.slug}</h3>
+                    <Link href={`/products/${order.id}`}>
+                      <h3>{order.slug}</h3>
+                    </Link>
                     <p>{order.short} </p>
                   </div>
 
@@ -73,6 +78,9 @@ export default async function CartPage() {
                     productId={order.id}
                     productQuantity={order.quantity}
                   />
+                  <h4>
+                    {order.totalPrice} <span>$</span>
+                  </h4>
                   <DeleteItemFromCart productId={order.id} />
                 </div>
               );

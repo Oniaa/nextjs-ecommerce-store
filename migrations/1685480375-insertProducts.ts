@@ -83,33 +83,6 @@ export const products = [
       'Experience a sense of calm and tranquility with our Turquoise Tranquility Bubbles. The soothing shade of turquoise imbues these bubbles with a serene energy, creating a peaceful atmosphere. Indulge in a moment of relaxation and let the turquoise bubbles transport you to a state of bliss!',
     short: 'Indulge in tranquility with Turquoise Tranquility Bubbles.',
   },
-  {
-    id: 10,
-    name: 'bluewater',
-    price: 24,
-    slug: 'Blue Water Bliss Bubbles',
-    description:
-      'Dive into a world of aquatic wonder with our Blue Water Bliss Bubbles. Inspired by the depths of the ocean, these bubbles encapsulate the serene beauty of marine life. Immerse yourself in the enchanting blue hue and let your imagination swim alongside the bubbles!',
-    short: 'Dive into aquatic wonder with Blue Water Bliss Bubbles.',
-  },
-  {
-    id: 11,
-    name: 'greenwater',
-    price: 24,
-    slug: 'Green Water Magic Bubbles',
-    description:
-      ' Unleash the magic of nature with our Green Water Magic Bubbles. These bubbles capture the essence of lush forests and meandering streams, radiating a vibrant green glow. Let the refreshing green color transport you to a world where imagination meets the wonders of the natural world!',
-    short: 'Unleash the magic of nature with Gree Water Magic Bubbles.',
-  },
-  {
-    id: 12,
-    name: 'pinkwater',
-    price: 24,
-    slug: 'Pink Water Fantasy Bubbles',
-    description:
-      'Enter a realm of fantasy with our Pink Water Fantasy Bubbles. These whimsical orbs shimmer with a dreamy pink hue, creating an atmosphere of enchantment and wonder. Let your imagination soar as you blow bubbles that transport you to a world of fairy tales and magic!',
-    short: 'Enter a realm of fantasy with Pink Water Fantasy Bubbles.',
-  },
 ];
 
 export async function up(sql: Sql) {

@@ -9,75 +9,57 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <>
-      <main className={styles.mainContainer}>
-        <div className={styles.backgroundContainer}>
-          <section className={styles.sectionContainer}>
-            <div className={styles.divContainer1}>
-              <Link href="/products/1">
-                <Image
-                  src="/images/pink.png"
-                  alt="Pink Bubble"
-                  width="400"
-                  height="400"
-                />
+    <main className={styles.mainContainer}>
+      <div className={styles.backgroundContainer}>
+        <section className={styles.sectionContainer}>
+          <div className={styles.divContainer1}>
+            <Link href="/products/1">
+              <Image
+                src="/images/blue.png"
+                alt="Pink Bubble"
+                width="400"
+                height="400"
+              />
 
-                <div className={styles.textOverlay}>
-                  PINK <br /> BUBBLE
-                </div>
-              </Link>
-            </div>
-          </section>
-          <section className={styles.sectionContainer}>
-            <div className={styles.divContainer2}>
-              <Link href="/products/2">
-                <Image
-                  src="/images/blue.png"
-                  alt="Pink Bubble"
-                  width="400"
-                  height="400"
-                />
-                <div className={styles.textOverlay}>
-                  BLUE <br /> BUBBLE
-                </div>
-              </Link>
-            </div>
-          </section>
-          <section className={styles.sectionContainer}>
-            <div className={styles.divContainer3}>
-              <Link href="/products/3">
-                <Image
-                  src="/images/yellow.png"
-                  alt="Pink Bubble"
-                  width="400"
-                  height="400"
-                />
-                <div className={styles.textOverlay}>
-                  YELLOW <br /> BUBBLE
-                </div>
-              </Link>
-            </div>
-          </section>
-          <section className={styles.sectionContainer}>
-            <div className={styles.divContainer4}>
-              <Link href="/products/4">
-                <Image
-                  src="/images/green.png"
-                  alt="Pink Bubble"
-                  width="400"
-                  height="400"
-                />
-                <div className={styles.textOverlay}>
-                  GREEN <br /> BUBBLE
-                </div>
-              </Link>
-            </div>
-          </section>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <span>More Info later</span>
-      </footer>
-    </>
+              <div className={styles.textOverlay}>
+                ENCHANTING
+                <br /> BLUE BUBBLES
+              </div>
+            </Link>
+          </div>
+        </section>
+        <section className={styles.sectionContainer}>
+          <div className={styles.divContainer2}>
+            <Link href="/products/4">
+              <Image
+                src="/images/rainbow.png"
+                alt="Pink Bubble"
+                width="400"
+                height="400"
+              />
+              <div className={styles.textOverlay}>
+                RADIANT
+                <br /> RAINBOW BUBBLES
+              </div>
+            </Link>
+          </div>
+        </section>
+        <section className={styles.sectionContainer}>
+          <div className={styles.divContainer3}>
+            <Link href="/products/9">
+              <Image
+                src="/images/turquoise.png"
+                alt="Pink Bubble"
+                width="400"
+                height="400"
+              />
+              <div className={styles.textOverlay}>
+                TURQUOISE <br /> TRANQUILITY BUBBLES
+              </div>
+            </Link>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }

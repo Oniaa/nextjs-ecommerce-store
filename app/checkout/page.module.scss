@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 56px;
-  margin-bottom: 56px;
+  margin-bottom: 156px;
 }
 .section {
   display: flex;
@@ -25,8 +25,27 @@
 .contentContainer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 56px;
-  padding-bottom: 24px;
+  max-width: 500px;
+  padding: 24px 0 24px 0;
   border-bottom: 1px solid;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.price {
+  margin-right: 24px;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 16px;
 }

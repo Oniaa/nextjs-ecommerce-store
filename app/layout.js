@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
             </ul>
             <ul className={style.rightNavbar}>
               <li>
-                <Link href="/contacts">Contacts</Link>
+                <Link href="/contacts">About</Link>
               </li>
               <li>
                 <Link data-test-id="cart-link" href="/cart">
@@ -51,6 +51,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         <span className={style.logo}>Bubble Store</span>
+
         {children}
       </body>
     </html>

@@ -19,16 +19,16 @@ export default async function CheckoutPage() {
 
   const orders = carts.map((cart) => {
     const orderItem = products.find((product) => product.id === cart.id);
+    const totalPrice = parseInt(orderItem.price) * parseInt(cart.number);
     return {
       id: orderItem.id,
       name: orderItem.name,
       slug: orderItem.slug,
       price: orderItem.price,
       quantity: cart.number,
+      totalPrice: totalPrice,
     };
   });
-
-  const totalSum = carts.reduce((sum, item) => sum + parseInt(item.number), 0);
 
   const totalPrice = orders.reduce(
     (sum, item) => sum + parseInt(item.quantity) * parseInt(item.price),
@@ -52,23 +52,24 @@ export default async function CheckoutPage() {
                     className={style.contentContainer}
                     key={`cart-div-${order.id}`}
                   >
-                    <span>{order.quantity}x</span>
+                    <div className={style.text}>
+                      <span>{order.quantity}x</span>
 
-                    <h3>{order.slug}</h3>
-                    <span> </span>
-
-                    <span>{order.price} $</span>
+                      <h3>{order.slug}</h3>
+                    </div>
+                    <div className={style.price}>
+                      <span>{order.totalPrice} $ </span>
+                    </div>
                   </div>
                 );
               })}
 
               <br />
               <br />
-              <div>
-                <span>
-                  Total Quantity: {totalSum} Total Price: {totalPrice}$
-                </span>
+              <div className={style.totalContainer}>
+                <h3>Sub Total: {totalPrice}$</h3>
               </div>
+              <br />
             </>
           )}
         </div>

@@ -5,11 +5,10 @@
 
 .backgroundContainer {
   margin: auto;
-  background: linear-gradient(to top, #fef6f7, #ffffff);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 70%;
 }
 
 .sectionContainer {
@@ -23,8 +22,9 @@
 .divContainer1 {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 15%;
   width: 100%;
   height: 100%;
   padding-top: 150px;
@@ -38,8 +38,9 @@
 .divContainer2 {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 15%;
   width: 100%;
   height: 100%;
   padding-top: 0;
@@ -48,38 +49,27 @@
 .divContainer3 {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-left: 15%;
   width: 100%;
   height: 100%;
   padding-top: 0;
 }
 
-.divContainer4 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-
 .textOverlay {
   position: absolute;
   top: 50%;
-  left: 110%;
-  transform: translate(-50%, -50%);
+  left: 55%;
+  transform: translate(-40%, -50%);
   z-index: 2;
   font-weight: bold;
   font-size: 3.8rem;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
-
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  background: linear-gradient(to bottom, #fef6f7, #ffffff);
+.divContainer1:hover .textOverlay,
+.divContainer2:hover .textOverlay,
+.divContainer3:hover .textOverlay {
+  opacity: 1;
 }
