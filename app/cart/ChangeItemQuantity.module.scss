@@ -1,0 +1,21 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.quantityButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.quantityInput {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  text-align: right;
+}

@@ -4,6 +4,8 @@ import { parseJson } from '../../util/json';
 import CheckOutForm from './CheckOutForm';
 import style from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Checkout Page',
   description: 'This is your Checkout Page',
@@ -20,6 +22,7 @@ export default async function CheckoutPage() {
     return {
       id: orderItem.id,
       name: orderItem.name,
+      slug: orderItem.slug,
       price: orderItem.price,
       quantity: cart.number,
     };
@@ -34,50 +37,42 @@ export default async function CheckoutPage() {
 
   return (
     <main className={style.mainContainer}>
-      <div>
-        <CheckOutForm />
-      </div>
-      <div>
-        <h2>Cart summary</h2>
-        {orders.length > 0 && (
-          <>
-            {orders.map((order) => {
-              return (
-                <div
-                  className={style.contentContainer}
-                  key={`cart-div-${order.id}`}
-                >
-                  <table>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span>{order.quantity}x</span>
-                        </td>
-                        <td>
-                          <h3>{order.name}</h3>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span>{order.price} $</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              );
-            })}
+      <h1>Check Out</h1>
+      <section className={style.section}>
+        <div>
+          <CheckOutForm />
+        </div>
+        <div className={style.orderSection}>
+          <h2>Your Order</h2>
+          {orders.length > 0 && (
+            <>
+              {orders.map((order) => {
+                return (
+                  <div
+                    className={style.contentContainer}
+                    key={`cart-div-${order.id}`}
+                  >
+                    <span>{order.quantity}x</span>
 
-            <br />
-            <br />
-            <div>
-              <span>
-                Total Quantity: {totalSum} Total Price: {totalPrice}$
-              </span>
-            </div>
-          </>
-        )}
-      </div>
+                    <h3>{order.slug}</h3>
+                    <span> </span>
+
+                    <span>{order.price} $</span>
+                  </div>
+                );
+              })}
+
+              <br />
+              <br />
+              <div>
+                <span>
+                  Total Quantity: {totalSum} Total Price: {totalPrice}$
+                </span>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
     </main>
   );
 }

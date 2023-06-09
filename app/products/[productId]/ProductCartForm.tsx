@@ -2,7 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
-import { createOrUpdateCart, deleteCartItem } from './actions';
+import { createOrUpdateCart } from './actions';
+import style from './ProductCartForm.module.scss';
 
 type Props = {
   productId: number;
@@ -16,6 +17,7 @@ export default function ProductCartForm(props: Props) {
     <form>
       <div>
         <input
+          className={style.quantitySelector}
           data-test-id="product-quantity"
           type="number"
           min="1"
@@ -24,22 +26,16 @@ export default function ProductCartForm(props: Props) {
             setQuantity(parseInt(event.currentTarget.value));
           }}
         />
+        <br />
         <button
+          className={style.addButton}
           data-test-id="product-add-to-cart"
           formAction={async () => {
             router.refresh();
             await createOrUpdateCart(props.productId, quantity.toString());
           }}
         >
-          Add to Cart
-        </button>
-        <button
-          formAction={async () => {
-            router.refresh();
-            await deleteCartItem(props.productId);
-          }}
-        >
-          Remove from Cart
+          ADD TO CART
         </button>
       </div>
     </form>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { AiOutlineDelete } from 'react-icons/ai';
 import { deleteItem } from './actions';
 
 export default function DeleteItemFromCart(props) {
@@ -15,7 +16,7 @@ export default function DeleteItemFromCart(props) {
           await deleteItem(props.productId);
         }}
       >
-        Remove from Cart
+        <AiOutlineDelete />
       </button>
     </form>
   );

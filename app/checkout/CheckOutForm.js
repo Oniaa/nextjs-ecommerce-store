@@ -36,24 +36,26 @@ export default function CheckOutForm() {
   return (
     <form className={style.formContainer}>
       <h2>Billing details</h2>
-      <label>
-        First name
-        <input
-          data-test-id="checkout-first-name"
-          value={firstName}
-          onChange={(event) => setFirstName(event.currentTarget.value)}
-          required
-        />
-      </label>
-      <label>
-        Last name
-        <input
-          data-test-id="checkout-last-name"
-          value={lastName}
-          onChange={(event) => setLastName(event.currentTarget.value)}
-          required
-        />
-      </label>
+      <div className={style.nameContainer}>
+        <label>
+          First name
+          <input
+            data-test-id="checkout-first-name"
+            value={firstName}
+            onChange={(event) => setFirstName(event.currentTarget.value)}
+            required
+          />
+        </label>
+        <label>
+          Last name
+          <input
+            data-test-id="checkout-last-name"
+            value={lastName}
+            onChange={(event) => setLastName(event.currentTarget.value)}
+            required
+          />
+        </label>
+      </div>
       <label>
         E-mail address
         <input
@@ -72,24 +74,26 @@ export default function CheckOutForm() {
           required
         />
       </label>
-      <label>
-        City
-        <input
-          data-test-id="checkout-city"
-          value={city}
-          onChange={(event) => setCity(event.currentTarget.value)}
-          required
-        />
-      </label>
-      <label>
-        Postal Code
-        <input
-          data-test-id="checkout-postal-code"
-          value={postalCode}
-          onChange={(event) => setPostalCode(event.currentTarget.value)}
-          required
-        />
-      </label>
+      <div className={style.cityAndZip}>
+        <label>
+          City
+          <input
+            data-test-id="checkout-city"
+            value={city}
+            onChange={(event) => setCity(event.currentTarget.value)}
+            required
+          />
+        </label>
+        <label>
+          Postal Code
+          <input
+            data-test-id="checkout-postal-code"
+            value={postalCode}
+            onChange={(event) => setPostalCode(event.currentTarget.value)}
+            required
+          />
+        </label>
+      </div>
       <label>
         Country
         <input
@@ -109,26 +113,29 @@ export default function CheckOutForm() {
           required
         />
       </label>
-      <label>
-        Expiration date
-        <input
-          data-test-id="checkout-expiration-date"
-          value={expirationDate}
-          onChange={(event) => setExpirationDate(event.currentTarget.value)}
-          required
-        />
-      </label>
-      <label>
-        Security code
-        <input
-          data-test-id="checkout-security-code"
-          value={securityCode}
-          onChange={(event) => setSecurityCode(event.currentTarget.value)}
-          required
-        />
-      </label>
+      <div className={style.expDateCvv}>
+        <label>
+          Expiration date
+          <input
+            data-test-id="checkout-expiration-date"
+            value={expirationDate}
+            onChange={(event) => setExpirationDate(event.currentTarget.value)}
+            required
+          />
+        </label>
+        <label>
+          Security code
+          <input
+            data-test-id="checkout-security-code"
+            value={securityCode}
+            onChange={(event) => setSecurityCode(event.currentTarget.value)}
+            required
+          />
+        </label>
+      </div>
 
       <button
+        className={style.button}
         data-test-id="checkout-confirm-order"
         type="button"
         disabled={!validate()}

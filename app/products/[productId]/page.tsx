@@ -53,7 +53,7 @@ export default async function ProductPage(props: Props) {
           <p>{product.description} </p>
           <br />
           <div>
-            <span>In Cart: </span>
+            <span>Quantity: </span>
             {cartToUpdate?.number}
             <ProductCartForm productId={product.id} />
           </div>

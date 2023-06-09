@@ -8,6 +8,8 @@ export const metadata = {
   description: 'This is our Products Page',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function ProductsPage() {
   const products = await getProducts();
 
@@ -29,13 +31,15 @@ export default async function ProductsPage() {
                 height={200}
                 alt="Bubbles"
               />
+
               <Link
+                className={style.productText}
                 href={`/products/${product.id}`}
                 data-test-id={`product-${product.id}`}
               >
-                {product.slug} {product.price}$
+                <h2>{product.slug}</h2>
+                <span>{product.price}$</span>
               </Link>
-              {product.short}
             </div>
           );
         })}

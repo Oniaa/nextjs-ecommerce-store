@@ -3,13 +3,40 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+  margin-top: 56px;
+  margin-bottom: 56px;
 }
+
+.backgroundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 88px 0 88px;
+}
+
 .contentContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 32px;
+  width: 80%;
   margin: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid;
+
+  h4 {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+  }
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 156px;
+  width: 100%;
 }

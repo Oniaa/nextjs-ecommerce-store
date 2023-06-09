@@ -7,6 +7,8 @@ import CheckOutButton from './CheckOutButton';
 import DeleteItemFromCart from './DeleteButton';
 import style from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Cart',
   description: 'This is your Cart Page',
@@ -37,60 +39,57 @@ export default async function CartPage() {
     0,
   );
 
-  console.log(orders);
-
   return (
     <main className={style.mainContainer}>
       <h1>Your Cart</h1>
       <br />
       <br />
-      {orders.length > 0 && (
-        <>
-          {orders.map((order) => {
-            return (
-              <div
-                className={style.contentContainer}
-                key={`cart-div-${order.id}`}
-                data-test-id={`cart-div-${order.id}`}
-              >
-                <Image
-                  src={`/images/${order.name}.png`}
-                  width={100}
-                  height={100}
-                  alt="Bubbles"
-                />
-                <div>
-                  <h3>{order.slug}</h3>
-                  <span>{order.short} </span>
-                  <br />
-                  <span>{order.price} $</span>
-                  <br />
+      <div className={style.backgroundContainer}>
+        {orders.length > 0 && (
+          <>
+            {orders.map((order) => {
+              return (
+                <div
+                  className={style.contentContainer}
+                  key={`cart-div-${order.id}`}
+                  data-test-id={`cart-div-${order.id}`}
+                >
+                  <Image
+                    src={`/images/${order.name}.png`}
+                    width={100}
+                    height={100}
+                    alt="Bubbles"
+                  />
+                  <div>
+                    <h3>{order.slug}</h3>
+                    <p>{order.short} </p>
+                  </div>
+
+                  <h4>
+                    {order.price} <span>$</span>
+                  </h4>
+
                   <ChangeItemQuantity
                     productId={order.id}
                     productQuantity={order.quantity}
                   />
                   <DeleteItemFromCart productId={order.id} />
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
 
-          <br />
-          <br />
-          <div>
-            <h4>
-              <span>Total Quantity: {totalSum}</span>
-              <span>
-                Total Price: <span data-test-id="cart-total">{totalPrice}</span>
-                $
-              </span>
-            </h4>
-          </div>
-          <br />
-          <br />
-          <CheckOutButton />
-        </>
-      )}
+            <div className={style.totalContainer}>
+              <h3>
+                Sub total: {totalSum} Items for{' '}
+                <span data-test-id="cart-total">{totalPrice}</span>$
+              </h3>
+            </div>
+            <br />
+            <br />
+            <CheckOutButton />
+          </>
+        )}
+      </div>
     </main>
   );
 }
